@@ -3,4 +3,5 @@
 🍵
 
 ## Hardware and rpi system setup
+https://brachiograph.readthedocs.io/en/latest/index.html
 https://github.com/evildmp/BrachioGraph
