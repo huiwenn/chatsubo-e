@@ -616,7 +616,7 @@ class BrachioGraph:
             (self.INNER_ARM**2+self.OUTER_ARM**2-hypotenuse**2)/(2*self.INNER_ARM*self.OUTER_ARM)
         )
 
-        shoulder_motor_angle = hypotenuse_angle - inner_angle
+        shoulder_motor_angle = hypotenuse_angle + inner_angle
         elbow_motor_angle = math.pi - outer_angle
 
         return (math.degrees(shoulder_motor_angle), math.degrees(elbow_motor_angle))
