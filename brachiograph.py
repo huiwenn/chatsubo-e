@@ -31,7 +31,7 @@ class BrachioGraph:
         servo_2_centre=1500,
         servo_1_degree_ms=-10,      # milliseconds pulse-width per degree
         servo_2_degree_ms=10,       # reversed for the mounting of the elbow servo
-        arm_1_centre=-60,
+        arm_1_centre=90,
         arm_2_centre=90,
         hysteresis_correction_1=0,  # hardware error compensation
         hysteresis_correction_2=0,
@@ -512,7 +512,7 @@ class BrachioGraph:
     #  ----------------- angles-to-pulse-widths methods -----------------
 
     def naive_angles_to_pulse_widths_1(self, angle):
-        return -(angle - self.arm_1_centre) * self.servo_1_degree_ms + self.servo_1_centre
+        return self.servo_1_centre - self.servo_1_degree_ms * (angle - self.arm_1_centre)
 
     def naive_angles_to_pulse_widths_2(self, angle):
         return (angle - self.arm_2_centre) * self.servo_2_degree_ms + self.servo_2_centre
@@ -527,7 +527,6 @@ class BrachioGraph:
         pulse_width_1, pulse_width_2 = self.angles_to_pw_1(angle_1), self.angles_to_pw_2(angle_2)
 
         return (pulse_width_1, pulse_width_2)
-
 
     #  ----------------- hardware-related methods -----------------
 
