@@ -116,7 +116,7 @@ class BrachioGraph:
             self.rpi.set_PWM_frequency(15, 50)
 
             # Initialise the pantograph with the motors in the centre of their travel
-            self.rpi.set_servo_pulsewidth(14, self.angles_to_pw_1(-90))
+            self.rpi.set_servo_pulsewidth(14, self.angles_to_pw_1(90))
             sleep(0.3)
             self.rpi.set_servo_pulsewidth(15, self.angles_to_pw_2(90))
             sleep(0.3)
@@ -512,7 +512,7 @@ class BrachioGraph:
     #  ----------------- angles-to-pulse-widths methods -----------------
 
     def naive_angles_to_pulse_widths_1(self, angle):
-        return (angle - self.arm_1_centre) * self.servo_1_degree_ms + self.servo_1_centre
+        return -(angle - self.arm_1_centre) * self.servo_1_degree_ms + self.servo_1_centre
 
     def naive_angles_to_pulse_widths_2(self, angle):
         return (angle - self.arm_2_centre) * self.servo_2_degree_ms + self.servo_2_centre

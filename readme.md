@@ -15,7 +15,7 @@ sudo pigpiod
 python3
 
 from brachiograph import BrachioGraph
-bg = BrachioGraph(inner_arm=10, outer_arm=19, servo_1_degree_ms=10, servo_2_degree_ms=-10)
+bg = BrachioGraph(inner_arm=10, outer_arm=19, servo_2_degree_ms=-10)
 
 bg = BrachioGraph(inner_arm=10, outer_arm=19, servo_2_degree_ms=-10, bounds=[-15, 5, -2, 12])
 
