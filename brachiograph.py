@@ -571,7 +571,7 @@ class BrachioGraph:
             print("Parking")
 
         self.pen.up()
-        self.xy(-self.INNER_ARM, self.OUTER_ARM)
+        self.xy(self.INNER_ARM, self.OUTER_ARM)
         sleep(1)
         # self.quiet()
 

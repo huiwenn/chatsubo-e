@@ -10,7 +10,6 @@ virtual_bg = BrachioGraph(
     virtual_mode=True
 )
 
-
 # ----------------- drawing methods -----------------
 
 def test_plot_from_file():
@@ -62,3 +61,4 @@ def test_linedraw_to_plot():
         draw_hatch=32, repeat_hatch=1,
         )
     virtual_bg.plot_file("images/test_gradient.json")
+
