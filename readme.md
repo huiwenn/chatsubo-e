@@ -21,10 +21,9 @@ python3
 
 from brachiograph import BrachioGraph
 
-bg = BrachioGraph(inner_arm=10, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, pw_down=1100, pw_up=1080, bounds=[3.0, 18.0, 6.0, 21.0])
+bg = BrachioGraph(inner_arm=10, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, pw_down=1050, pw_up=1030, bounds=[3.0, 18.0, 6.0, 21.0])
 
 bg.set_angles(angle_1=90, angle_2=95)  
-bg.drive_xy()
 ```
 
 #Calibrate pen lift

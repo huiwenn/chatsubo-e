@@ -16,6 +16,21 @@ except ModuleNotFoundError:
 import tqdm
 
 
+servo_1_angle_pws1 = [
+    [100, 1330]
+    [90, 1430],
+    [80, 1530],
+    [70, 1650],
+    [60, 1740],
+    [50, 1820],
+    [40, 1910],
+    [ 30, 2010],
+    [ 20, 2100],
+    [ 10, 2180],
+    [  0, 2290],
+    [-10, 2360],
+]
+
 class BrachioGraph:
 
     def __init__(
@@ -25,10 +40,10 @@ class BrachioGraph:
         virtual_mode = False,
         wait=None,
         bounds=None,                # the maximum rectangular drawing area
-        servo_1_angle_pws=[],       # pulse-widths for various angles
+        servo_1_angle_pws=servo_1_angle_pws1,       # pulse-widths for various angles
         servo_2_angle_pws=[],
         servo_1_centre=1500,
-        servo_2_centre=1500,
+        servo_2_centre=1370,
         servo_1_degree_ms=-10,      # milliseconds pulse-width per degree
         servo_2_degree_ms=10,       # reversed for the mounting of the elbow servo
         arm_1_centre=90,
