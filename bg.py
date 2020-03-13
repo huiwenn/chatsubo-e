@@ -11,6 +11,7 @@ from brachiograph import BrachioGraph
 # angles in degrees and corresponding pulse-widths for the two arm servos
 
 servo_1_angle_pws1 = [
+    [100, 1330]
     [90, 1430],
     [80, 1530],
     [70, 1650],

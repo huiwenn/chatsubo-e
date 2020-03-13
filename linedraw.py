@@ -6,7 +6,7 @@ import math
 import argparse
 import json
 import time
-
+import numpy as np
 from PIL import Image, ImageDraw, ImageOps
 
 # file settings
@@ -41,13 +41,40 @@ def image_to_json(
 
     filename = json_folder + image_filename + ".json"
     lines_to_file(lines, filename)
+    return lines
 
 
-def svg_to_json(svg_file):
-    with open(svg_file, "r") as f:
-        lines = json.load(line_file)
+def pose_svg_to_json(image_filename):
+    with open("images/{}.svg".format(image_filename),'r') as f:
+        svg = f.read()
+
+    ls = svg.split('><')
+    paths = [l for l in ls if "path" in l and l[0]!='/']
+    paths_clean = []
+    for p in paths:
+        splt = p.replace('"','').split(" ")
+        this = [[splt[2], splt[3]] , [splt[5], splt[6]]]
+        paths_clean.append(this)
+
+    # scale coords from zero to 1000
+    pathes = np.array(paths_clean).astype(float)
+    mini = pathes.min()
+    mini_coord = [x[-1] for x in np.argwhere(pathes==mini)]
+    if 0 in mini_coord:
+        for p in pathes:
+            p -= np.array([mini,0])
+    if 1 in mini_coord:
+        for p in pathes:
+            p -= np.array([0, mini])
+
+    maxi = pathes.max()
+    pathes = pathes/maxi * 1000
+    lines = pathes.tolist()
+
+    makesvg()
     filename = json_folder + image_filename + ".json"
     lines_to_file(lines, filename)
+    return lines
 
 def makesvg(lines):
     print("generating svg file...")
@@ -60,7 +87,6 @@ def makesvg(lines):
         out += '<polyline points="'+l+'" stroke="black" stroke-width="1" fill="none" />\n'
     out += '</svg>'
     return out
-
 
 # we can use turtle graphics to visualise how a set of lines will be drawn
 def draw(lines):
@@ -279,18 +305,27 @@ def getdots(IM):
     PX = IM.load()
     dots = []
     w,h = IM.size
+
     for y in range(h-1):
+
         row = []
         for x in range(1,w):
             if PX[x,y] == 255:
                 if len(row) > 0:
-                    if x-row[-1][0] == row[-1][-1]+1:
+
+                    # what does this do?
+                    # x from x of prev point  ==  y of prev point + 1
+                    if x-row[-1][0] == row[-1][-1]+1: 
+                        # (start, segment lenth + 1)
                         row[-1] = (row[-1][0],row[-1][-1]+1)
-                    else:
+                    else: 
                         row.append((x,0))
+                
+                #first one
                 else:
                     row.append((x,0))
         dots.append(row)
+    print(dots)
     return dots
 
 
