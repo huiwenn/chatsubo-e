@@ -71,7 +71,9 @@ def pose_svg_to_json(image_filename):
     pathes = pathes/maxi * 1000
     lines = pathes.tolist()
 
-    makesvg()
+    f = open(svg_folder + image_filename + "_new.svg", 'w')
+    f.write(makesvg(lines))
+
     filename = json_folder + image_filename + ".json"
     lines_to_file(lines, filename)
     return lines
