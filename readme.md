@@ -43,14 +43,15 @@ bg.pen.calibrate()
 ```
 from linedraw import *
 
-image_to_json("gradient", draw_contours=2, draw_hatch=16)
-
 image_to_json("chatsubo", draw_contours=1)
+
+
 ```
 
 ## requirements
-if having trouble importing cv2
+if having trouble importing cv2 - 
+
 ```
-sudo apt install python3-opencv
+pip install opencv-contrib-python==4.1.0.25
 ```
 
