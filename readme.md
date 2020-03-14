@@ -51,7 +51,7 @@ bg.plot_file('images/mars.json', bounds=bg.bounds)
 from linedraw import *
 
 image_to_json("mars", draw_contours=1, draw_hatch=1)
-pose_svg_to_json("jonas-01", draw_contours=1)
+pose_svg_to_json("jonas-body")
 ```
 
 ## requirements
