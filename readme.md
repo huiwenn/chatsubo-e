@@ -24,7 +24,7 @@ https://github.com/evildmp/BrachioGraph
 python3
 
 from brachiograph import BrachioGraph
-bg = BrachioGraph(inner_arm=11, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, pw_down=840, pw_up=820, bounds=[-10.0, 5.0, -1.0, 20.0])
+bg = BrachioGraph(inner_arm=11, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, servo_2_centre=1450, pw_down=920, pw_up=880, bounds=[-10.0, 9.0, 2.0, 20.0])
 
 bg.set_angles(angle_1=90, angle_2=90)  
 bg.drive_xy()

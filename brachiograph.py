@@ -43,7 +43,7 @@ class BrachioGraph:
         servo_1_angle_pws=servo_1_angle_pws1,       # pulse-widths for various angles
         servo_2_angle_pws=[],
         servo_1_centre=1500,
-        servo_2_centre=1550,
+        servo_2_centre=1450,
         servo_1_degree_ms=-10,      # milliseconds pulse-width per degree
         servo_2_degree_ms=10,       # reversed for the mounting of the elbow servo
         arm_1_centre=90,
@@ -225,7 +225,7 @@ class BrachioGraph:
     def draw(self, x=0, y=0, wait=0, interpolate=10):
 
         wait = wait or self.wait
-
+        x, y = float(x), float(y)
         self.xy(x=x, y=y, wait=wait, interpolate=interpolate, draw=True)
 
     # ----------------- line-processing methods -----------------
