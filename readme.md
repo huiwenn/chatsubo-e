@@ -43,14 +43,14 @@ bg.box()
 
 bg.plot_file('images/ca.json')
 
-bg.plot_file('images/jonas-01.json')
+bg.plot_file('images/mars.json', bounds=bg.bounds)
 ```
 
 ## test linedraw
 ```
 from linedraw import *
 
-image_to_json("chatsubo", draw_contours=1)
+image_to_json("mars", draw_contours=1, draw_hatch=1)
 pose_svg_to_json("jonas-01", draw_contours=1)
 ```
 
