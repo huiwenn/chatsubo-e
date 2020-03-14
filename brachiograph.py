@@ -43,7 +43,7 @@ class BrachioGraph:
         servo_1_angle_pws=servo_1_angle_pws1,       # pulse-widths for various angles
         servo_2_angle_pws=[],
         servo_1_centre=1500,
-        servo_2_centre=1370,
+        servo_2_centre=1550,
         servo_1_degree_ms=-10,      # milliseconds pulse-width per degree
         servo_2_degree_ms=10,       # reversed for the mounting of the elbow servo
         arm_1_centre=90,
