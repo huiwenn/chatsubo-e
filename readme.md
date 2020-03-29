@@ -24,7 +24,7 @@ https://github.com/evildmp/BrachioGraph
 python3
 
 from brachiograph import BrachioGraph
-bg = BrachioGraph(inner_arm=11, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, servo_2_centre=1450, pw_down=1110, pw_up=1090, bounds=[-10.0, 9.0, 2.0, 25.0])
+bg = BrachioGraph(inner_arm=11, outer_arm=15, servo_1_degree_ms=10, servo_2_degree_ms=10, servo_2_centre=1450, pw_down=1110, pw_up=1090, bounds=[-10.0, 9.0, 2.0, 23.0])
 
 bg.set_angles(angle_1=90, angle_2=90)  
 bg.drive_xy()
@@ -41,7 +41,7 @@ bg.pen.calibrate()
 ```
 bg.box()
 
-bg.plot_file('images/ca.json')
+bg.plot_file('images/gradient.json')
 bg.plot_file('images/jonas-body.json', bounds=bg.bounds)
 
 bg.plot_file('images/mars.json', bounds=bg.bounds)
