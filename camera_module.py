@@ -18,7 +18,8 @@ camera = PiCamera()
 camera.rotation = 180
 
 img_path = '/home/pi/chatsubo-e/images/{}.jpg'
+json_path = '/home/pi/chatsubo-e/images/{}.json'
 camera.capture(img_path.format(args.name))
 
 image_to_json(args.name, draw_contours=5, draw_hatch=16) # smaller values are slower are more detailed
-bg.plot_file(img_path.format(args.name), bounds=bg.bounds)
+bg.plot_file(json_path.format(args.name), bounds=bg.bounds)
