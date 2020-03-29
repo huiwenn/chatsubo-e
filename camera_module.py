@@ -1,7 +1,7 @@
 from brachiograph import BrachioGraph
 from picamera import PiCamera
 from linedraw import image_to_json
-
+import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('name', type=str, help='name of picture')
