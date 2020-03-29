@@ -16,7 +16,7 @@ https://github.com/evildmp/BrachioGraph
 
 `cd chatsubo-e` 
 
-`sudo pigpiod`  (will return error `Can't initialise pigpio library` if command has been ran since turning on. ok to procede)
+`sudo pigpiod`  (will return error `can't initialise pigpio library` if command has been ran since boot. ok to procede)
 
 ## Building the instance (as of now)
 
@@ -42,6 +42,7 @@ bg.pen.calibrate()
 bg.box()
 
 bg.plot_file('images/ca.json')
+bg.plot_file('images/jonas-body.json', bounds=bg.bounds)
 
 bg.plot_file('images/mars.json', bounds=bg.bounds)
 ```
@@ -51,7 +52,7 @@ bg.plot_file('images/mars.json', bounds=bg.bounds)
 from linedraw import *
 
 image_to_json("mars", draw_contours=1, draw_hatch=1)
-pose_svg_to_json("jonas-body")
+pose_svg_to_json("jonas")
 ```
 
 ## requirements

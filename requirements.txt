@@ -4,3 +4,4 @@ pillow
 pytest
 readchar
 tqdm
+opencv-contrib-python==4.1.0.25
