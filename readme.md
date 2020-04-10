@@ -55,6 +55,12 @@ image_to_json("mars", draw_contours=1, draw_hatch=1)
 pose_svg_to_json("jonas")
 ```
 
+## camera module
+
+command line tool.
+```
+python3 camera_module.py name 16 0
+```
 ## requirements
 if having trouble importing cv2 - 
 
